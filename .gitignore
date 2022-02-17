@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*/.ipynb_checkpoints/
+.DS_Store
+*/.DS_Store
+.vscode/
+Icon$'\r'
+*/Icon$'\r'
+Icon
+Icon[]
+data/CD
+data/enzymology
+data/GAP_assay

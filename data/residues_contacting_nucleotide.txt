@@ -1,0 +1,30 @@
+# Residues numbers are from sequence numbering, not PDB numbering.
+# Distances were computed using PDB 3m1i, chain A.
+# Contacting residues determined by a 4 Å cutoff
+20
+21
+22
+23
+24
+25
+26
+27
+37
+38
+39
+40
+41
+43
+44
+67
+68
+69
+70
+71
+124
+125
+127
+128
+152
+153
+154
