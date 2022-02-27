@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score       score cart_bonded dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep fa_intra_sol_xover4              fa_rep              fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak lk_ball_wtd       omega overlap_chainbreak            p_aa_pp rama_prepro         ref        time yhh_planarity description 
+SCORE:    4245.049    4245.048    4299.043     0.000 -1151.518   483.504  -288.909        2.406              49.150             132.912             755.997     -41.076     -47.505     -17.442     -48.652             0.000     -26.357      64.674              0.000            -28.388      33.292      73.916       0.000         0.000 4hb2_cleaned_0001

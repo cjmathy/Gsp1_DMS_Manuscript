@@ -1,0 +1,1517 @@
+core.init: Checking for fconfig files in pwd and ./rosetta/flags 
+core.init: Rosetta version: 2020.27.post.dev+93.master.8ecab77 8ecab77aa50ac1301efe53641e07e09ac91fee3b git@github.com:RosettaCommons/main.git 2020-07-07T16:41:06
+core.init: command: /wynton/home/kortemme/cjmathy/Rosetta/main/source/bin/relax.default.linuxgccrelease -s 3gj0_cleaned.pdb -out:path:all preminimization_out/ -database /wynton/home/kortemme/cjmathy/Rosetta/main/database -in:file:movemap gsp1.movemap -use_input_sc -constrain_relax_to_start_coords -ignore_unrecognized_res -nstruct 20 -relax:cartesian -relax:coord_constrain_sidechains -relax:min_type lbfgs_armijo_nonmonotone -score:weights ref2015_cart -relax:script cart2.script
+basic.random.init_random_generator: 'RNG device' seed mode, using '/dev/urandom', seed=1924545933 seed_offset=0 real_seed=1924545933
+basic.random.init_random_generator: RandomGenerator:init: Normal mode, seed=1924545933 RG_type=mt19937
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015_cart
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+core.chemical.GlobalResidueTypeSet: Finished initializing fa_standard residue type set.  Created 981 residue types
+core.chemical.GlobalResidueTypeSet: Total time to initialize 2.31 seconds.
+basic.io.database: Database file opened: scoring/score_functions/rama/fd/all.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+core.scoring.P_AA: shapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+core.scoring.CartesianBondedEnergy: Initializing IdealParametersDatabase with default Ks=300 , 80 , 80 , 10 , 80
+basic.io.database: Database file opened: scoring/score_functions/bondlength_bondangle/default-lengths.txt
+core.scoring.CartesianBondedEnergy: Read 759 bb-independent lengths.
+basic.io.database: Database file opened: scoring/score_functions/bondlength_bondangle/default-angles.txt
+core.scoring.CartesianBondedEnergy: Read 1434 bb-independent angles.
+basic.io.database: Database file opened: scoring/score_functions/bondlength_bondangle/default-torsions.txt
+core.scoring.CartesianBondedEnergy: Read 1 bb-independent torsions.
+basic.io.database: Database file opened: scoring/score_functions/bondlength_bondangle/default-improper.txt
+core.scoring.CartesianBondedEnergy: Read 2202 bb-independent improper tors.
+protocols.relax.RelaxScriptManager: Reading relax scripts list from database.
+protocols.relax.RelaxScriptManager: ================== Reading script file: cart2.script ==================
+protocols.relax.RelaxScriptManager: switch:cartesian
+protocols.relax.RelaxScriptManager: repeat 2
+protocols.relax.RelaxScriptManager: ramp_repack_min 0.02  0.01     1.0  50
+protocols.relax.RelaxScriptManager: ramp_repack_min 0.250 0.01     0.5  50
+protocols.relax.RelaxScriptManager: ramp_repack_min 0.550 0.01     0.0 100
+protocols.relax.RelaxScriptManager: ramp_repack_min 1     0.00001  0.0 200
+protocols.relax.RelaxScriptManager: accept_to_best
+protocols.relax.RelaxScriptManager: endrepeat
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed 3gj0_cleaned.pdb nstruct indices 1 - 20
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.chemical.GlobalResidueTypeSet: Loading (but possibly not actually using) 'GDP' from the PDB components dictionary for residue type 'pdb_GDP'
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+basic.io.database: Database file opened: scoring/score_functions/elec_cp_reps.dat
+core.scoring.elec.util: Read 40 countpair representative atoms
+core.pack.dunbrack.RotamerLibrary: shapovalov_lib_fixes_enable option is true.
+core.pack.dunbrack.RotamerLibrary: shapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+core.pack.dunbrack.RotamerLibrary: Binary rotamer library selected: /wynton/home/kortemme/cjmathy/Rosetta/main/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+core.pack.dunbrack.RotamerLibrary: Using Dunbrack library binary file '/wynton/home/kortemme/cjmathy/Rosetta/main/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.49 seconds to load from binary
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V1,MG,V2 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V1,MG,V3 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V1,MG,V4 to DB with theta0 = 3.14159 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V1,MG,V5 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V1,MG,V6 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V2,MG,V3 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V2,MG,V4 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V2,MG,V5 to DB with theta0 = 3.14159 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V2,MG,V6 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V3,MG,V4 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V3,MG,V5 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V3,MG,V6 to DB with theta0 = 3.14159 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V4,MG,V5 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V4,MG,V6 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle MG: V5,MG,V6 to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V1, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V2, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V3, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V4, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V5, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length MG: MG,V6, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N9,C8,N7,H8 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N9,C8,N7,C5 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: H8,C8,N7,C5 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N7,C5,C4,C6 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N7,C5,C4,N9 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N7,C5,C4,N3 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: C6,C5,C4,N9 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: C6,C5,C4,N3 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N9,C5,C4,N3 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: C5,C6,O6,N1 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N1,C2,N3,N2 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N1,C2,N3,C4 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined torsion pdb_GDP: N2,C2,N3,C4 to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O1B,PB,O2B to DB with theta0 = 1.91123 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O1B,PB,O3B to DB with theta0 = 1.91034 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O1B,PB,O3A to DB with theta0 = 1.9108 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O2B,PB,O3B to DB with theta0 = 1.91072 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O2B,PB,O3A to DB with theta0 = 1.91059 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3B,PB,O3A to DB with theta0 = 1.91012 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: PB,O3A,PA to DB with theta0 = 2.3394 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3A,PA,O1A to DB with theta0 = 1.91036 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3A,PA,O2A to DB with theta0 = 1.91077 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3A,PA,O5' to DB with theta0 = 1.91115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O1A,PA,O2A to DB with theta0 = 1.91057 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O1A,PA,O5' to DB with theta0 = 1.91013 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O2A,PA,O5' to DB with theta0 = 1.91082 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: PA,O5',C5' to DB with theta0 = 2.14696 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O5',C5',C4' to DB with theta0 = 1.9108 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O5',C5',H5' to DB with theta0 = 1.91021 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O5',C5',H5'' to DB with theta0 = 1.91151 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',C5',H5' to DB with theta0 = 1.90973 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',C5',H5'' to DB with theta0 = 1.91086 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: H5',C5',H5'' to DB with theta0 = 1.91069 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5',C4',O4' to DB with theta0 = 1.9186 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5',C4',C3' to DB with theta0 = 1.91831 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5',C4',H4' to DB with theta0 = 1.91707 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O4',C4',C3' to DB with theta0 = 1.87187 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O4',C4',H4' to DB with theta0 = 1.91809 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C3',C4',H4' to DB with theta0 = 1.91945 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',O4',C1' to DB with theta0 = 1.86768 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',C3',O3' to DB with theta0 = 1.92807 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',C3',C2' to DB with theta0 = 1.81855 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C4',C3',H3' to DB with theta0 = 1.92776 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3',C3',C2' to DB with theta0 = 1.92894 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O3',C3',H3' to DB with theta0 = 1.92766 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2',C3',H3' to DB with theta0 = 1.93038 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C3',O3',HO3' to DB with theta0 = 1.98959 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C3',C2',O2' to DB with theta0 = 1.93551 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C3',C2',C1' to DB with theta0 = 1.78213 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C3',C2',H2' to DB with theta0 = 1.93589 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O2',C2',C1' to DB with theta0 = 1.93538 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O2',C2',H2' to DB with theta0 = 1.93384 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C1',C2',H2' to DB with theta0 = 1.93635 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2',O2',HO2' to DB with theta0 = 1.99004 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O4',C1',C2' to DB with theta0 = 1.80566 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O4',C1',N9 to DB with theta0 = 1.92996 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O4',C1',H1' to DB with theta0 = 1.93057 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2',C1',N9 to DB with theta0 = 1.93056 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2',C1',H1' to DB with theta0 = 1.9307 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N9,C1',H1' to DB with theta0 = 1.93293 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C1',N9,C8 to DB with theta0 = 2.20447 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C1',N9,C4 to DB with theta0 = 2.20262 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C8,N9,C4 to DB with theta0 = 1.87608 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N9,C8,N7 to DB with theta0 = 1.91644 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N9,C8,H8 to DB with theta0 = 2.18343 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N7,C8,H8 to DB with theta0 = 2.18331 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C8,N7,C5 to DB with theta0 = 1.90913 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N7,C5,C6 to DB with theta0 = 2.34177 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N7,C5,C4 to DB with theta0 = 1.87082 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C6,C5,C4 to DB with theta0 = 2.07058 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5,C6,O6 to DB with theta0 = 2.1085 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5,C6,N1 to DB with theta0 = 2.06527 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: O6,C6,N1 to DB with theta0 = 2.10941 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C6,N1,C2 to DB with theta0 = 2.10006 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C6,N1,HN1 to DB with theta0 = 2.09078 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2,N1,HN1 to DB with theta0 = 2.09234 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N1,C2,N2 to DB with theta0 = 2.07722 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N1,C2,N3 to DB with theta0 = 2.1277 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N2,C2,N3 to DB with theta0 = 2.07826 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2,N2,HN21 to DB with theta0 = 2.09404 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2,N2,HN22 to DB with theta0 = 2.09441 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: HN21,N2,HN22 to DB with theta0 = 2.09474 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C2,N3,C4 to DB with theta0 = 2.1145 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N9,C4,C5 to DB with theta0 = 1.85228 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: N9,C4,N3 to DB with theta0 = 2.3426 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined angle pdb_GDP: C5,C4,N3 to DB with theta0 = 2.08821 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PB,O1B, to DB with d0 = 1.47974 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PB,O2B, to DB with d0 = 1.60963 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PB,O3B, to DB with d0 = 1.61031 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PB,O3A, to DB with d0 = 1.60992 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: O3A,PA, to DB with d0 = 1.60957 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PA,O1A, to DB with d0 = 1.48005 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PA,O2A, to DB with d0 = 1.61013 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: PA,O5', to DB with d0 = 1.6097 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: O5',C5', to DB with d0 = 1.42877 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C5',C4', to DB with d0 = 1.52991 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C5',H5', to DB with d0 = 1.09037 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C5',H5'', to DB with d0 = 1.0891 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C4',O4', to DB with d0 = 1.4374 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C4',C3', to DB with d0 = 1.54127 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C4',H4', to DB with d0 = 1.09077 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: O4',C1', to DB with d0 = 1.44361 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C3',O3', to DB with d0 = 1.42899 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C3',C2', to DB with d0 = 1.54759 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C3',H3', to DB with d0 = 1.09033 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: O3',HO3', to DB with d0 = 0.967861 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C2',O2', to DB with d0 = 1.42868 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C2',C1', to DB with d0 = 1.54988 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C2',H2', to DB with d0 = 1.09017 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: O2',HO2', to DB with d0 = 0.967821 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C1',N9, to DB with d0 = 1.46503 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C1',H1', to DB with d0 = 1.08963 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N9,C8, to DB with d0 = 1.36431 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N9,C4, to DB with d0 = 1.36871 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C8,N7, to DB with d0 = 1.30068 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C8,H8, to DB with d0 = 1.07963 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N7,C5, to DB with d0 = 1.35575 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C5,C6, to DB with d0 = 1.41438 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C5,C4, to DB with d0 = 1.39972 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C6,O6, to DB with d0 = 1.2189 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C6,N1, to DB with d0 = 1.35196 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N1,C2, to DB with d0 = 1.36331 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N1,HN1, to DB with d0 = 0.969434 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C2,N2, to DB with d0 = 1.37238 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: C2,N3, to DB with d0 = 1.31387 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N2,HN21, to DB with d0 = 0.970444 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N2,HN22, to DB with d0 = 0.970077 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length pdb_GDP: N3,C4, to DB with d0 = 1.33876 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined angle VRT: X,ORIG,Y to DB with theta0 = 1.5708 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: Adding undefined length VRT: ORIG,X, to DB with d0 = 1 , Kd = 300
+core.scoring.CartesianBondedEnergy: Adding undefined length VRT: ORIG,Y, to DB with d0 = 1 , Kd = 300
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.671  0.332239  0.332239  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.713  0.431925  0.431925  0.55
+protocols.relax.FastRelax: MRP: 0  -685.713  -685.713  0.431925  0.431925  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.713  0.431925  0.431925  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.713  0.431925  0.431925  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2707 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -568.544  0.112068  0.112068  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2453 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -653.392  0.12444  0.12444  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2345 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.544  0.320423  0.320423  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2247 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.396  0.445048  0.445048  0.55
+protocols.relax.FastRelax: MRP: 1  -686.396  -686.396  0.445048  0.445048  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.396  0.445048  0.445048  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.396  0.445048  0.445048  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0001 reported success in 102 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gj0_cleaned.pdb
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.671  0.332239  0.332239  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.695  0.431514  0.431514  0.55
+protocols.relax.FastRelax: MRP: 0  -685.695  -685.695  0.431514  0.431514  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.695  0.431514  0.431514  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.695  0.431514  0.431514  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2706 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -565.158  0.109655  0.109655  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2420 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -653.788  0.125517  0.125517  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2331 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.024  0.317474  0.317474  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2219 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.929  0.451515  0.451515  0.55
+protocols.relax.FastRelax: MRP: 1  -687.929  -687.929  0.451515  0.451515  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.929  0.451515  0.451515  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.929  0.451515  0.451515  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0002 reported success in 99 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.671  0.329272  0.329272  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.382  0.433056  0.433056  0.55
+protocols.relax.FastRelax: MRP: 0  -689.382  -689.382  0.433056  0.433056  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.382  0.433056  0.433056  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.382  0.433056  0.433056  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2722 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -596.916  0.106207  0.106207  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2475 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -654.927  0.129377  0.129377  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2340 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -743.409  0.328159  0.328159  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2239 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.694  0.43432  0.43432  0.55
+protocols.relax.FastRelax: MRP: 1  -685.694  -689.382  0.433056  0.433056  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.694  0.43432  0.43432  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.694  0.43432  0.43432  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0003 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.67  0.332239  0.332239  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.712  0.43142  0.43142  0.55
+protocols.relax.FastRelax: MRP: 0  -685.712  -685.712  0.43142  0.43142  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.712  0.43142  0.43142  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.712  0.43142  0.43142  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2708 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -590.464  0.106826  0.106826  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2435 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.468  0.126335  0.126335  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2335 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.618  0.319296  0.319296  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2247 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.367  0.438795  0.438795  0.55
+protocols.relax.FastRelax: MRP: 1  -686.367  -686.367  0.438795  0.438795  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.367  0.438795  0.438795  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.367  0.438795  0.438795  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0004 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.384  0.431633  0.431633  0.55
+protocols.relax.FastRelax: MRP: 0  -689.384  -689.384  0.431633  0.431633  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.384  0.431633  0.431633  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.384  0.431633  0.431633  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2718 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -596.674  0.107102  0.107102  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2420 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.223  0.126487  0.126487  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2338 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.128  0.318984  0.318984  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2246 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.902  0.442022  0.442022  0.55
+protocols.relax.FastRelax: MRP: 1  -686.902  -689.384  0.431633  0.431633  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.902  0.442022  0.442022  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.902  0.442022  0.442022  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0005 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.049  0.429841  0.429841  0.55
+protocols.relax.FastRelax: MRP: 0  -689.049  -689.049  0.429841  0.429841  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.049  0.429841  0.429841  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.049  0.429841  0.429841  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2716 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -558.483  0.112748  0.112748  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2444 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.464  0.125169  0.125169  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2342 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -743.219  0.324383  0.324383  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2235 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.505  0.430199  0.430199  0.55
+protocols.relax.FastRelax: MRP: 1  -686.505  -689.049  0.429841  0.429841  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.505  0.430199  0.430199  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.505  0.430199  0.430199  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0006 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.671  0.329272  0.329272  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.378  0.431719  0.431719  0.55
+protocols.relax.FastRelax: MRP: 0  -689.378  -689.378  0.431719  0.431719  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.378  0.431719  0.431719  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.378  0.431719  0.431719  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2725 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -588.282  0.108422  0.108422  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2467 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -654.088  0.126301  0.126301  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2313 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -742.042  0.319922  0.319922  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2227 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.532  0.449444  0.449444  0.55
+protocols.relax.FastRelax: MRP: 1  -687.532  -689.378  0.431719  0.431719  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.532  0.449444  0.449444  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.532  0.449444  0.449444  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0007 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.009  0.326368  0.326368  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2244 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.643  0.436056  0.436056  0.55
+protocols.relax.FastRelax: MRP: 0  -688.643  -688.643  0.436056  0.436056  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.643  0.436056  0.436056  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.643  0.436056  0.436056  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2715 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -597.471  0.109011  0.109011  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2391 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -657.706  0.126893  0.126893  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2330 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -743.325  0.32148  0.32148  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2233 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.13  0.44767  0.44767  0.55
+protocols.relax.FastRelax: MRP: 1  -688.13  -688.643  0.436056  0.436056  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.13  0.44767  0.44767  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.13  0.44767  0.44767  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0008 reported success in 101 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.671  0.329272  0.329272  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.39  0.432835  0.432835  0.55
+protocols.relax.FastRelax: MRP: 0  -689.39  -689.39  0.432835  0.432835  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.39  0.432835  0.432835  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.39  0.432835  0.432835  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2725 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -596.099  0.10489  0.10489  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2453 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -654.863  0.126324  0.126324  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2343 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.179  0.316008  0.316008  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2239 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.063  0.441801  0.441801  0.55
+protocols.relax.FastRelax: MRP: 1  -687.063  -689.39  0.432835  0.432835  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.063  0.441801  0.441801  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.063  0.441801  0.441801  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0009 reported success in 96 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327129  0.327129  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.087  0.429873  0.429873  0.55
+protocols.relax.FastRelax: MRP: 0  -689.087  -689.087  0.429873  0.429873  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.087  0.429873  0.429873  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.087  0.429873  0.429873  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2714 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -584.995  0.107159  0.107159  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2456 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -654.14  0.127844  0.127844  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2333 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.759  0.315051  0.315051  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2244 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.378  0.431744  0.431744  0.55
+protocols.relax.FastRelax: MRP: 1  -686.378  -689.087  0.429873  0.429873  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.378  0.431744  0.431744  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.378  0.431744  0.431744  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0010 reported success in 97 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327129  0.327129  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.092  0.429015  0.429015  0.55
+protocols.relax.FastRelax: MRP: 0  -689.092  -689.092  0.429015  0.429015  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.092  0.429015  0.429015  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.092  0.429015  0.429015  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2712 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -581.307  0.106405  0.106405  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2427 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -654.696  0.126888  0.126888  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2332 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.363  0.320254  0.320254  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.352  0.445429  0.445429  0.55
+protocols.relax.FastRelax: MRP: 1  -687.352  -689.092  0.429015  0.429015  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.352  0.445429  0.445429  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.352  0.445429  0.445429  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0011 reported success in 100 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.67  0.332239  0.332239  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.712  0.43142  0.43142  0.55
+protocols.relax.FastRelax: MRP: 0  -685.712  -685.712  0.43142  0.43142  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.712  0.43142  0.43142  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.712  0.43142  0.43142  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2708 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -590.464  0.106826  0.106826  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2435 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.468  0.126335  0.126335  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2335 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.618  0.319296  0.319296  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2247 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.367  0.438795  0.438795  0.55
+protocols.relax.FastRelax: MRP: 1  -686.367  -686.367  0.438795  0.438795  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.367  0.438795  0.438795  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.367  0.438795  0.438795  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0012 reported success in 99 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.051  0.430037  0.430037  0.55
+protocols.relax.FastRelax: MRP: 0  -689.051  -689.051  0.430037  0.430037  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.051  0.430037  0.430037  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.051  0.430037  0.430037  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2716 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -587.979  0.11225  0.11225  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2463 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.241  0.127479  0.127479  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2341 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -744.527  0.329916  0.329916  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2238 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.137  0.446139  0.446139  0.55
+protocols.relax.FastRelax: MRP: 1  -688.137  -689.051  0.430037  0.430037  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.137  0.446139  0.446139  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.137  0.446139  0.446139  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0013 reported success in 98 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.384  0.431633  0.431633  0.55
+protocols.relax.FastRelax: MRP: 0  -689.384  -689.384  0.431633  0.431633  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.384  0.431633  0.431633  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.384  0.431633  0.431633  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2718 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -596.674  0.107102  0.107102  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2420 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.223  0.126487  0.126487  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2338 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.128  0.318984  0.318984  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2246 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.902  0.442022  0.442022  0.55
+protocols.relax.FastRelax: MRP: 1  -686.902  -689.384  0.431633  0.431633  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.902  0.442022  0.442022  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.902  0.442022  0.442022  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0014 reported success in 102 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327129  0.327129  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.043  0.42969  0.42969  0.55
+protocols.relax.FastRelax: MRP: 0  -689.043  -689.043  0.42969  0.42969  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.043  0.42969  0.42969  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.043  0.42969  0.42969  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2713 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -595.461  0.106869  0.106869  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2447 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -652.945  0.129029  0.129029  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2346 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.486  0.324614  0.324614  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2244 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -685.496  0.449004  0.449004  0.55
+protocols.relax.FastRelax: MRP: 1  -685.496  -689.043  0.42969  0.42969  
+protocols.relax.FastRelax: CMD: accept_to_best  -685.496  0.449004  0.449004  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -685.496  0.449004  0.449004  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0015 reported success in 100 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -739.596  0.328468  0.328468  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.269  0.436469  0.436469  0.55
+protocols.relax.FastRelax: MRP: 0  -688.269  -688.269  0.436469  0.436469  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.269  0.436469  0.436469  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.269  0.436469  0.436469  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2697 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -602.204  0.105904  0.105904  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2443 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -660.255  0.127199  0.127199  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2320 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.932  0.331851  0.331851  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2236 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.652  0.452096  0.452096  0.55
+protocols.relax.FastRelax: MRP: 1  -686.652  -688.269  0.436469  0.436469  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.652  0.452096  0.452096  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.652  0.452096  0.452096  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0016 reported success in 100 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -740.537  0.335003  0.335003  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2238 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.144  0.435734  0.435734  0.55
+protocols.relax.FastRelax: MRP: 0  -688.144  -688.144  0.435734  0.435734  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.144  0.435734  0.435734  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.144  0.435734  0.435734  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2716 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -595.856  0.110206  0.110206  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2473 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -656.004  0.127281  0.127281  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2347 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -744.025  0.330299  0.330299  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2234 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.601  0.448257  0.448257  0.55
+protocols.relax.FastRelax: MRP: 1  -687.601  -688.144  0.435734  0.435734  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.601  0.448257  0.448257  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.601  0.448257  0.448257  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0017 reported success in 98 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.055  0.428607  0.428607  0.55
+protocols.relax.FastRelax: MRP: 0  -689.055  -689.055  0.428607  0.428607  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.055  0.428607  0.428607  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.055  0.428607  0.428607  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2713 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -569.404  0.112672  0.112672  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2431 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -652.861  0.127728  0.127728  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2353 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -743.144  0.329534  0.329534  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2227 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.632  0.444799  0.444799  0.55
+protocols.relax.FastRelax: MRP: 1  -687.632  -689.055  0.428607  0.428607  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.632  0.444799  0.444799  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.632  0.444799  0.444799  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0018 reported success in 100 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.657  0.327128  0.327128  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -689.051  0.430037  0.430037  0.55
+protocols.relax.FastRelax: MRP: 0  -689.051  -689.051  0.430037  0.430037  
+protocols.relax.FastRelax: CMD: accept_to_best  -689.051  0.430037  0.430037  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -689.051  0.430037  0.430037  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2716 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -587.979  0.11225  0.11225  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2463 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -655.244  0.127478  0.127478  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2341 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -744.689  0.328006  0.328006  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2237 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -687.78  0.441794  0.441794  0.55
+protocols.relax.FastRelax: MRP: 1  -687.78  -689.051  0.430037  0.430037  
+protocols.relax.FastRelax: CMD: accept_to_best  -687.78  0.441794  0.441794  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -687.78  0.441794  0.441794  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0019 reported success in 100 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gj0_cleaned.pdb
+core.import_pose.import_pose: File '3gj0_cleaned.pdb' automatically determined to be of type PDB
+core.io.pose_from_sfr.PoseFromSFRBuilder: Adding undetected upper terminus type to residue 207,  207 A
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue THR:CtermProteinFull 207
+core.scoring.CartesianBondedEnergy: Creating new peptide-bonded energy container (210)
+protocols.relax.FastRelax: Using CartesianMinizer with lbfgs
+protocols.relax.FastRelax: CMD: switch:cartesian  -94.3876  0  0  0.55
+protocols.relax.FastRelax: CMD: repeat  -94.3876  0  0  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2802 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -650.697  0.104439  0.104439  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2445 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.119  0.120882  0.120882  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2367 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -739.596  0.328468  0.328468  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -688.29  0.436121  0.436121  0.55
+protocols.relax.FastRelax: MRP: 0  -688.29  -688.29  0.436121  0.436121  
+protocols.relax.FastRelax: CMD: accept_to_best  -688.29  0.436121  0.436121  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -688.29  0.436121  0.436121  0.55
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2692 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -619.95  0.105738  0.105738  0.011
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2473 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 50 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -663.785  0.126493  0.126493  0.1375
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2349 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 100 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -741.231  0.327394  0.327394  0.3025
+core.pack.task: Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: Using simple Rotamer generation logic for pdb_GDP
+core.pack.pack_rotamers: built 2242 rotamers at 210 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.optimization.Minimizer: [ WARNING ] LBFGS MAX CYCLES 200 EXCEEDED, BUT FUNC NOT CONVERGED!
+protocols.relax.FastRelax: CMD: ramp_repack_min  -686.586  0.44928  0.44928  0.55
+protocols.relax.FastRelax: MRP: 1  -686.586  -688.29  0.436121  0.436121  
+protocols.relax.FastRelax: CMD: accept_to_best  -686.586  0.44928  0.44928  0.55
+protocols.relax.FastRelax: CMD: endrepeat  -686.586  0.44928  0.44928  0.55
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: 3gj0_cleaned_0020 reported success in 96 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 20 jobs considered, 20 jobs attempted in 1996 seconds
+basic.citation_manager.CitationManager: 
+The following Rosetta modules were used during this run of Rosetta, and should be cited:
+
+FastRelax Mover's citation(s):
+Khatib F, Cooper S, Tyka MD, Xu K, Makedon I, Popovic Z, Baker D, and Players F.  (2011).  Algorithm discovery by protein folding game players.  Proc Natl Acad Sci USA 108(47):18949-53.  doi: 10.1073/pnas.1115898108.
+
+

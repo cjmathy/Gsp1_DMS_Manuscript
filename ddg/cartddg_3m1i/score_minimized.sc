@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score       score cart_bonded dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep fa_intra_sol_xover4              fa_rep              fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak lk_ball_wtd       omega overlap_chainbreak            p_aa_pp rama_prepro         ref        time yhh_planarity description 
+SCORE:    -826.403    -826.403     106.363     0.000 -1494.284   186.477  -381.756        2.340              44.059             111.806             815.388     -51.860     -55.085     -26.500     -53.988             0.000     -82.972       3.181              0.000            -40.716      14.047      76.933       1.000         0.162 3m1i_cleaned_0012_trunc_0001
