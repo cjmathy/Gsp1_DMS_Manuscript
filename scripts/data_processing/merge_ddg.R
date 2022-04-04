@@ -12,19 +12,19 @@ df_seq <-
     mutate(pos_Sc = as.integer(pos_Sc), pos_Hs = as.integer(pos_Hs))
 
 df_ddg_3m1i <-
-    read_csv('data/ddg/20200806_gsp1_ddg.csv', col_types=cols()) %>% 
+    read_csv('data/ddg/3m1i_gsp1_ddg.csv', col_types=cols()) %>% 
     extract(col=mutation, into=c('aa_from','pos_Sc', 'aa_to'), regex='([A-Z])([0-9]{1,3})([A-Z])', convert=T, remove=F) %>% 
     mutate(struct='3m1i', species='Sc') %>% 
     right_join(df_seq, by='pos_Sc')
 
 df_ddg_4hb2 <-
-    read_csv('data/ddg/20210304_gsp1_4hb2_ddg.csv', col_types=cols()) %>% 
+    read_csv('data/ddg/4hb2_gsp1_ddg.csv', col_types=cols()) %>% 
     extract(col=mutation, into=c('aa_from','pos_Hs', 'aa_to'), regex='([A-Z])([0-9]{1,3})([A-Z])', convert=T, remove=F) %>% 
     mutate(struct='4hb2', species='Hs') %>% 
     right_join(df_seq, by=c('pos_Hs'))
 
 df_ddg_3gj0 <-
-    read_csv('data/ddg/20210421_gsp1_3gj0_ddg.csv', col_types=cols()) %>% 
+    read_csv('data/ddg/3gj0_gsp1_ddg.csv', col_types=cols()) %>% 
     extract(col=mutation, into=c('aa_from','pos_Hs', 'aa_to'), regex='([A-Z])([0-9]{1,3})([A-Z])', convert=T, remove=F) %>% 
     mutate(struct='3gj0', species='Hs') %>% 
     right_join(df_seq, by=c('pos_Hs'))
@@ -64,3 +64,18 @@ df_ddg_4hb2_3gj0 %>%
     ggplot(aes(x=ddg_3gj0, y=ddg_4hb2)) +
     geom_point() +
     theme_custom
+
+
+# merge all three datasets and save
+
+bind_rows(df_ddg_3m1i, df_ddg_3gj0, df_ddg_4hb2) %>% 
+    select(mutation,aa_from,aa_to,struct,species,pos_Sc,aa_Sc,pos_Hs,aa_Hs,ddg) %>% 
+    left_join(
+        select(df_fit, position, aa_to, 'fitness'=score, bin, fitness_low_reads_flag=low_reads_flag),
+        by=c('pos_Sc'='position','aa_to'='aa_to')) %>% 
+    select(mutation, aa_to, struct, pos_Sc, ddg, fitness, bin, fitness_low_reads_flag) %>% 
+    filter((pos_Sc >= 11) & (pos_Sc <= 183)) %>% # shared residues across the PDBs
+    pivot_wider(id_cols=c('pos_Sc','aa_to', fitness, bin, fitness_low_reads_flag), names_from='struct', values_from='ddg') %>% 
+    mutate('ddG_Gsp1_GTP'=`3m1i`, 'ddG_Ran_GDP'=`3gj0`, 'ddG_Ran_GTP'=`4hb2`) %>% 
+    write_csv('data/ddg/Gsp1_ddG_merged_all_states_shared_residues.csv')
+  

@@ -33,7 +33,7 @@ df_slopes <-
   mutate(name = factor(name, levels=c('WT_1','WT_2',sample_order))) %>% 
   mutate(type=case_when(
       sample %in% c('F28V','H50N','F54A','N156A','F159L','F163L') ~ 'Toxic/GOF',
-      sample %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'Tolerant',
+      sample %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'WT-like',
       sample == 'WT' ~ 'WT')
   )
 
@@ -103,7 +103,7 @@ df_to_plot %>%
     geom_point(shape=16, size = 2.5, alpha=1, show.legend = T) +
     geom_text_repel(aes(label=sample), size=2.5, show.legend = F) +
     xlab('Fitness score') + ylab('Relative preference for GTP\n(ratio of v0, GTP/GDP)') + 
-    scale_color_manual(values=c('blue','red','black'), name='Mutant Type') +
+    scale_color_manual(values=c('red','black','blue'), name='Mutant Type') +
     theme_custom +
     theme(legend.key.size = unit(5, 'points'))
 

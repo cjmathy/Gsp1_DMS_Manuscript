@@ -12,6 +12,14 @@ df <-
            'aa_to'=factor(aa_to, levels=AA_ORDERING),
            'aa_from'=factor(aa_from, levels=AA_ORDERING))
 
+df %>% pull(bin) %>% unique
+
+# get percent of toxics in dataset
+
+
+nrow(filter(df, !low_reads_flag, aa_from!=aa_to, bin=='toxic'))/nrow(filter(df, !low_reads_flag, aa_from!=aa_to))
+
+
 # prepare a sequence vector for WT Gsp1 so we can box cells in heatmaps that are WT in sequence (i.e. T34T)
 gsp1_seq <- select(df, aa_from, position) %>% unique() %>% pull(aa_from) %>% as.character()
 

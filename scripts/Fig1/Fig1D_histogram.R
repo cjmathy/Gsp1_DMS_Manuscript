@@ -3,19 +3,31 @@
 source('scripts/config_workspace.R')
 
 df <-
-    read_csv('data/Gsp1_fitness_scores.csv', col_types=cols()) %>%
+    read_csv('data/Gsp1_fitness_scores.csv', col_types=cols()) %>% 
     mutate(score = as.double(score)) %>% 
     filter(!low_reads_flag) %>% 
     mutate(bin=case_when(aa_to=='*'  & !is.na(score) ~ 'STOP',
                          aa_to==aa_from & !is.na(score) ~ 'WT',
                          T ~ bin)) %>% 
-    mutate(bin=factor(bin, levels=rev(BIN_ORDERING))) %>% 
-    group_by(bin) %>% 
+    mutate(table_cat = bin) %>% 
+    mutate(table_cat = case_when(
+        table_cat != 'STOP' ~ table_cat,
+        (table_cat == 'STOP') & (position < 175) ~ 'STOP1',
+        (table_cat == 'STOP') & (position >= 175) ~ 'STOP2'
+    )) %>% 
+    mutate(
+        bin=factor(bin, levels=rev(BIN_ORDERING)),
+        table_cat = factor(table_cat, levels=c(
+            'WT','STOP1', 'STOP2', 'beneficial',
+            'WT-like', 'intermediate', 'STOP-like', 'toxic'
+        ))) %>% 
+    group_by(table_cat) %>% 
     mutate(n=n(),
            mean_score=mean(score, na.rm=T),
            sd = sd(score, na.rm=T)) %>% 
     ungroup()
 
+df
 
 
 # get number of low-reads
@@ -25,10 +37,23 @@ read_csv('data/Gsp1_fitness_scores.csv', col_types=cols()) %>%
     nrow
 
 # use the counts to edit the legend in the final figure, adding the n for each category
-df %>% 
-    select(bin, n, mean_score, sd) %>% 
+df_means <-
+    df %>% 
+    select(table_cat, n, mean_score, sd) %>% 
     unique %>% 
-    arrange(bin)
+    arrange(table_cat)
+
+df_means
+
+
+# use these values to count the fraction of deleterious mutations that are worse than the median
+nrow(filter(df, bin %in% c('toxic','STOP-like', 'intermediate')))
+df %>% 
+    filter(bin %in% c('toxic','STOP-like', 'intermediate')) %>% 
+    filter(score < filter(df_medians, bin=='STOP')$median_score) %>% 
+    nrow
+
+1458/1901
 
 bw <- 0.1  # bin width
 lt <- 0.05 # line thickness
@@ -53,3 +78,4 @@ df %>%
           panel.border = element_rect(colour = "black", fill=NA, size=0.25))
 
 ggsave('figures/Fig1/Fig1D_histogram.pdf', height=2.9, width=3.3)
+

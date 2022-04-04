@@ -15,7 +15,7 @@ os.chdir('/Users/cjmathy/gdrive/gsp1_dms')
 # get list of toxic positions
 toxics = list(
     pd.read_csv('data/toxic_positions.csv')
-    .query('position != 220')
+    .query('position != 220') 
     .position
     )
 n_toxics=len(toxics)
@@ -51,10 +51,10 @@ ax = fig.add_axes([0, 0, 1, 1])
 c = venn2(
     [set(toxics), set(gtpase_regions).union(set(contacting))],
     ('Toxic/GOF\npositions ({})'.format(n_toxics), 
-     'Positions in the GTPase\nregions or contacting\nthe nucleotide ({})'.format(n_gr_union_contacts))
+     'Active site\npositions ({})'.format(n_gr_union_contacts))
 )
 
-c.get_patch_by_id('10').set_color('#00CD66')    # springgreen3
+c.get_patch_by_id('10').set_color('#CD2029')    # red
 c.get_patch_by_id('10').set_edgecolor('black')
 c.get_patch_by_id('10').set_alpha(0.6)
 c.get_patch_by_id('01').set_color('#FFFFFF')    # white
@@ -121,7 +121,7 @@ c.get_patch_by_id('10').set_alpha(1)
 c.get_patch_by_id('01').set_color('#FFA54F')    # tan1
 c.get_patch_by_id('01').set_edgecolor('black')   
 c.get_patch_by_id('01').set_alpha(0.6)
-c.get_patch_by_id('11').set_color('#00CD66')    # springgreen3
+c.get_patch_by_id('11').set_color('#CD2029')    # red
 c.get_patch_by_id('11').set_edgecolor('black')
 c.get_patch_by_id('11').set_alpha(0.6)
 
@@ -131,6 +131,7 @@ lblB = c.get_label_by_id("B")
 lblB.set_position((0.7, 0.05))
 
 plt.savefig('figures/Fig2/Fig2C_venn.pdf', dpi=300, bbox_inches='tight')
+
 
 
 

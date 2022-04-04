@@ -15,7 +15,7 @@ df <-
   mutate(mutant_type = case_when(
     mutant %in% c('WT') ~ 'WT',
     mutant %in% c('F28V','H50N','F54A','N156A','F159L','F163L') ~ 'Toxic/GOF',
-    mutant %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'Tolerant'
+    mutant %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'WT-like'
   )) %>% 
   mutate(mutant = factor(mutant, levels = sample_order)) %>% 
   filter(mutant %in% sample_order) %>% 
@@ -30,7 +30,7 @@ df %>%
   ggplot(aes(x=mutant, y=mean_kcat_Km, fill=mutant_type)) +
   geom_bar(stat='identity') +
   geom_point(aes(mutant, individual_kcat_Km), data=df, show.legend=F) +
-  scale_fill_manual(values = c('blue2','red2','gray'), name='Mutant Type') +
+  scale_fill_manual(values = c('red2','gray','blue2'), name='Mutant Type') +
   xlab('Gsp1 mutant') + ylab('kcat/Km of GAP-activated\nGTP hydrolysis, relative to WT') +
   ylim(c(0,80)) +
   theme_custom +

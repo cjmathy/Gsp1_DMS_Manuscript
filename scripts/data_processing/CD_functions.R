@@ -1,4 +1,3 @@
-
 # Parsing function, which returns a list of two dataframes per experiment: data and metadata
 parse_CD_file = function(filepath, return_metadata = FALSE) {
   
@@ -164,11 +163,18 @@ fit_sigmoid_melt <- function(df, x, y, id) {
     y <- pull(df, !!y)
     y1 <- estimate_derivative(x, y, w=15)
     approx_Tm <- x[which(y1 == max(y1, na.rm=TRUE))]
+    max_yu <- 7 
 
     # for the starting values, m = 2000 is good for WT
     #   - m of 1000-2000 is good for WT like slope. Less cooperative folders will have lower m
     #   - mu and mf are negative for decreasing baselines as temperature increases
     #     at 100% unfolded or 100% folded
+
+    # As for the max_yu <- 7 part, it just works best... you need to set the max observable
+    #   unfolded value high enough so that the slope can fit. If you set it to the max
+    #   observed value (which is 1), then you need higher magnitude mu values. I just
+    #   went with this quick and dirty solution since the fits are good.
+
     tryCatch({
         nls(y ~ ((yf + mf*x) + (yu + mu*x)*exp(m*(1/Tm - 1/x))) / (1 + exp(m*(1/Tm - 1/x))),
             start = list(m = 2000, Tm = approx_Tm, mf = 0, mu = 0, yf = 0, yu = 1),

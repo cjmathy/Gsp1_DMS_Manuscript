@@ -12,7 +12,7 @@ library(broom)
 
 df_tox <- 
     list(`Toxic/GOF` = c('F28V','H50N','F54A','N156A','F159L','F163L'), 
-         Tolerant = c('F28Y','H50R','F54W','N156W','F159W','F163Y'),
+         `WT-like` = c('F28Y','H50R','F54W','N156W','F159W','F163Y'),
          WT = c('WT')
          ) %>% 
     stack() %>% 

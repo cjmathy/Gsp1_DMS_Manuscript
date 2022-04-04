@@ -63,7 +63,7 @@ draw_fitness_heatmap <- function(mat, name, col, label_WT=F, sequence=NULL, gray
     width = ncol(mat)*unit(1.8, "mm"), 
     height = nrow(mat)*unit(1.8, "mm"),
 
-    row_title = 'Amino Acid Substituted',
+    row_title = 'Amino acid substituted',
     cluster_rows = F,
     row_names_side = 'right',
     row_title_gp = gpar(fontsize = 7, fontfamily='Helvetica'),
@@ -136,19 +136,18 @@ gtpase_regions <- list(
 )
 gtpase_regions <- list('GTPase regions'=unlist(gtpase_regions, use.names=F))
 
-# nucleotide_recognition <- list(
-#     'NK.D to SAK interactions'=c(92,100,127,131,138,141,148,150,152)
-# )
+contacts_nucleotide <-   # within 4 angstroms of nucleotide from PDB 3m1iA 
+    list('Contacts Nucleotide'=unlist(scan('data/residues_contacting_nucleotide.txt', comment.char='#'), use.names=F))
 
-cterm <- list('C-terminal switch'=seq(181,208))
+active_site <- list('Active site regions'=sort(unique(c(unlist(gtpase_regions), unlist(contacts_nucleotide)))))
+
+cterm <- list('C-terminal extension'=seq(181,220)) # use 208 if only considering the linker+helix
 
 distal_sites <- list(
     'Distal sites in H32 mechanism'=c(28,30,31,32,33,35,48,50,54,156,159,163,183,186),
     'Allosteric positions (31P NMR)'=c(34,141,147,157))
 distal_sites <- list('Distal sites affecting switching'=unlist(distal_sites, use.names=F))
 
-contacts_nucleotide <-   # within 4 angstroms of nucleotide from PDB 3m1iA 
-    list('Contacts Nucleotide'=unlist(scan('data/residues_contacting_nucleotide.txt', comment.char='#'), use.names=F))
 
 # from BIOGRID: https://thebiogrid.org/31559/protein
 PTMs_detailed <- list(
@@ -156,12 +155,11 @@ PTMs_detailed <- list(
     'Succinylation site'=c(25),
     'Ubiquitinylation site'=c(101,125))
 
-PTMs <- list('PTMs'=unlist(PTMs_detailed, use.names=F))
+PTMs <- list('PTM sites'=unlist(PTMs_detailed, use.names=F))
 
 binary_df_gtpase <-
     enframe(c(
-        gtpase_regions,
-        contacts_nucleotide, 
+        active_site, 
         cterm,
         distal_sites,
         PTMs)) %>% 
@@ -208,13 +206,13 @@ binary_df_interface <-
     df_interface %>% 
     filter(interface=='core', partner %in% c('SRM1','RNA1','YRB1')) %>% 
     rename('position'='yeast_num') %>% 
-    mutate('Regulator Interface'=1) %>% 
-    select(position, 'Regulator Interface') %>% 
+    mutate('Regulator interfaces'=1) %>% 
+    select(position, 'Regulator interfaces') %>% 
     unique() %>% 
-    add_row('position' = 56, 'Regulator Interface' = 1) %>% 
-    add_row('position' = 93, 'Regulator Interface' = 1) %>% 
-    add_row('position' = 99, 'Regulator Interface' = 1) %>% 
-    add_row('position' = 133, 'Regulator Interface' = 1)
+    add_row('position' = 56, 'Regulator interfaces' = 1) %>% 
+    add_row('position' = 93, 'Regulator interfaces' = 1) %>% 
+    add_row('position' = 99, 'Regulator interfaces' = 1) %>% 
+    add_row('position' = 133, 'Regulator interfaces' = 1)
 
 
 binary_df <-
@@ -242,10 +240,6 @@ binary_mat <-
 # order by severity
 binary_mat <- binary_mat[,as.character(toxics)]
 
-# save binary mat for venn bar graphs
-
-
-
 novel_positions <- which(! as.integer(colnames(binary_mat)) %in% c(unlist(gtpase_regions), unlist(cterm)))
 
 hm2 <- Heatmap(
@@ -269,7 +263,7 @@ hm2 <- Heatmap(
     column_title_gp = gpar(fontsize = 7, fontfamily='Helvetica'),
     column_names_gp = gpar(fontsize = 6, fontfamily='Helvetica'),
 
-    # borders around all cells, green if synonymous mutation
+    # dots and red background
     cell_fun = function(j, i, x, y, width, height, fill) {
         if(j %in% novel_positions) {
             grid.rect(x, y, width, height, gp = gpar(col = 'black', lwd = 0.5, fill = "red3")) 
@@ -277,12 +271,14 @@ hm2 <- Heatmap(
             grid.rect(x, y, width, height, gp = gpar(col = 'black', lwd = 0.5, fill = "transparent")) 
         }
         if(binary_mat[i,j]==1) {
-            grid.circle(x, y, r = unit(0.25, "mm"), gp = gpar(fill = 'black'))
+            # grid.circle(x, y, r = unit(0.25, "mm"), gp = gpar(fill = 'black'))
+            grid.text('*', x, y, r = unit(0.25, "mm"), hjust=unit(0.475, 'mm'), vjust=unit(0.775, 'mm'), gp = gpar(fill = 'black', fontsize=10))
         }
-
       }
+    
 )
 
 pdf('figures/Fig4/Fig4_toxics_annotation.pdf', width=6, height=2.5)
 hm1 %v% hm2
 dev.off()
+

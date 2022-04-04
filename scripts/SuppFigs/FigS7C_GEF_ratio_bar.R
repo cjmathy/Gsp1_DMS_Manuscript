@@ -15,7 +15,7 @@ df %>%
   geom_errorbar(aes(ymin=r-sd,ymax=r+sd), width=0.3, alpha=0.7) +
   xlab('Gsp1 mutant') + ylab('Inital rate (absolute value of v0),\nrelative to WT') +
   xlab('Fitness score') + ylab('Relative preference for GTP\n(ratio of v0, GTP/GDP)') + 
-  scale_fill_manual(values=c('blue2','red2','gray'), name='Mutant Type') +
+  scale_fill_manual(values=c('red2','gray','blue2'), name='Mutant Type') +
   theme_custom +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1),
         legend.position = 'none')

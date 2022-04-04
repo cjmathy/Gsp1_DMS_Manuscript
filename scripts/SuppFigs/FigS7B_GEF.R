@@ -29,7 +29,7 @@ df_slopes <-
   mutate(name = factor(name, levels=c('WT_1','WT_2',sample_order))) %>% 
   mutate(type=case_when(
       sample %in% c('F28V','H50N','F54A','N156A','F159L','F163L') ~ 'Toxic/GOF',
-      sample %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'Tolerant',
+      sample %in% c('F28Y','H50R','F54W','N156W','F159W','F163Y') ~ 'WT-like',
       sample == 'WT' ~ 'WT')
   )
 
@@ -84,7 +84,7 @@ df_to_plot %>%
       ))
     ) +
   xlab('Gsp1 mutant') + ylab('Inital rate (absolute value of v0),\nrelative to WT') +
-  scale_fill_manual(values=c('blue2','red2','gray'), name='Mutant Type') +
+  scale_fill_manual(values=c('red2','gray','blue2'), name='Mutant Type') +
   theme_custom +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1),
         legend.key.size = unit(10,'pt'))

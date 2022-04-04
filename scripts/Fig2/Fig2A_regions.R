@@ -29,7 +29,6 @@ df <-
     left_join(df_bur, by='position') %>% 
     mutate(sasa_group_category = ifelse(position %in% activesite, 'active site', sasa_group_category)) %>% 
     mutate(sasa_group_category = factor(sasa_group_category, levels=c('active site','surface','interface core','structure core')))
-    
 
 # Total residues in each group, for figure
 totals <-
@@ -44,9 +43,9 @@ totals <-
 df_names <- data.frame(
     'sasa_group_category' = c('active site','surface','interface core','structure core'),
     'name' = c(
-        glue('GTPase\nregions\nand\nnucleotide\ncontacts\nn = {n}', n=totals['active site']),
+        glue('Active\nsite\nn = {n}', n=totals['active site']),
         glue('Surface\nn = {n}', n=totals['surface']),
-        glue('Interface\ncore\nn = {n}', n=totals['interface core']),
+        glue('Interface\nn = {n}', n=totals['interface core']),
         glue('Structure\ncore\nn = {n}', n=totals['structure core'])
     )
 ) %>% mutate(name=factor(name, levels=.$name))
@@ -74,6 +73,7 @@ df %>%
     
 ggsave('figures/Fig2/Fig2A_histogram_region.pdf', height=3.3, width=2)
 
+# percentages of WT-like, STOP-like, and toxic
 df %>% 
     filter(position!=220) %>% 
     filter(aa_to!='*') %>% 
@@ -91,4 +91,14 @@ df %>%
     pivot_wider(names_from='bin',values_from='percent')  %>% 
     select(sasa_group_category, `WT-like`, `STOP-like`, toxic)
 
+# number of each bin for GTPase regions
+df %>% 
+    filter(position!=220) %>% 
+    filter(aa_to!='*') %>% 
+    filter(aa_to!=aa_from) %>% 
+    group_by(sasa_group_category, bin) %>% 
+    mutate(n=n()) %>% 
+    filter(sasa_group_category=='active site') %>% 
+    select(sasa_group_category, n) %>% 
+    unique
 

@@ -70,3 +70,4 @@ data.frame(list('position'=seq(1,220))) %>%
   select(position, sasa_group_category) %>% 
   unique() %>% 
   write_csv('data/burial.csv')
+

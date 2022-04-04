@@ -16,24 +16,21 @@ df_aln <-
 df <- 
     left_join(df_sets, df_annot, by=c('pos'='position')) %>%
     left_join(df_aln, by='pos') %>% 
-    select(-`C-terminal switch`) %>%  
-    rename('PTM sites in Gsp1'=PTMs) %>% 
+    select(gof=-gof_all, -`C-terminal extension`) %>%
     mutate(
-        `GTPase regions`=ifelse(`GTPase regions`==0, F, T),
-        `Contacts Nucleotide`=ifelse(`Contacts Nucleotide`==0, F, T),
-        `Distal sites affecting switching`=ifelse(`Distal sites affecting switching`==0, F, T),
-        `PTM sites in Gsp1`=ifelse(`PTM sites in Gsp1`==0, F, T),
-        `Regulator Interface`=ifelse(`Regulator Interface`==0, F, T),
+        'Active site regions'=ifelse(`Active site regions`==0, F, T),
+        'Distal sites affecting switching'=ifelse(`Distal sites affecting switching`==0, F, T),
+        'PTM sites in Gsp1'=ifelse(`PTM sites`==0, F, T),
+        'Regulator interfaces'=ifelse(`Regulator interfaces`==0, F, T)
     ) %>% 
-    select(-gof_all) %>% 
     rename('gof'=gof_2plus) %>% 
+    select(-`PTM sites`) %>% 
     pivot_longer(cols=-c(pos,tox,gof,sca,aln_num,aa_HRas,aa_Gsp1,pos_HRas), names_to='category', values_to='in_region') %>% 
     mutate(category=factor(category, levels=c(
-        'GTPase regions',
-        'Contacts Nucleotide',
+        'Active site regions',
         'Distal sites affecting switching',
         'PTM sites in Gsp1',
-        'Regulator Interface'
+        'Regulator interfaces'
     ))) %>% 
     mutate(res_Gsp1 = paste0(aa_Gsp1,pos), res_HRas = paste0(aa_HRas,pos_HRas)) %>% 
     select(res_Gsp1, res_HRas, tox, gof, sca, category, in_region) %>% 

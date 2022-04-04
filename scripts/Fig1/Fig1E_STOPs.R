@@ -22,6 +22,11 @@ filter(df, position >= 175, aa_to=='*') %>% summarise(min(score))  # -10.5
 filter(df, position >= 175, aa_to=='*') %>% summarise(max(score))  # 0.451
 filter(df, position >= 175, aa_to=='*') %>% summarise(mean(score)) # -6.50
 
+df %>% filter(bin %in% 'toxic')
+
+
+df
+
 p1 <- df %>% 
     ggplot() +
     geom_point(data=df %>% filter(Category == 'Mutant'),
