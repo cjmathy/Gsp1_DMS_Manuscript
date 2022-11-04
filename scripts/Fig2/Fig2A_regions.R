@@ -33,12 +33,13 @@ df <-
 # Total residues in each group, for figure
 totals <-
     df %>% 
-    filter(position!=220) %>% 
     filter(aa_to!='*') %>% 
     filter(aa_to!=aa_from) %>% 
     group_by(sasa_group_category) %>% 
     summarise(n=n()) %>% 
     deframe()
+
+totals
 
 df_names <- data.frame(
     'sasa_group_category' = c('active site','surface','interface core','structure core'),
@@ -55,7 +56,6 @@ lt <- 0.05 # line thickness
 
 df %>% 
     left_join(df_names, by='sasa_group_category') %>% 
-    filter(position!=220) %>% 
     filter(aa_to!='*') %>% 
     filter(aa_to!=aa_from) %>% 
     ggplot(aes(x=score, fill=bin)) + 
@@ -71,11 +71,10 @@ df %>%
         strip.text.y = element_text(angle=0, margin = margin(r = 3, l = 3, unit = "pt"))
     )
     
-ggsave('figures/Fig2/Fig2A_histogram_region.pdf', height=3.3, width=2)
+ggsave('figures/Fig2/Fig2A_histogram_region.pdf', height=3.3, width=1.92)
 
 # percentages of WT-like, STOP-like, and toxic
 df %>% 
-    filter(position!=220) %>% 
     filter(aa_to!='*') %>% 
     filter(aa_to!=aa_from) %>% 
     group_by(sasa_group_category, bin) %>% 
@@ -88,12 +87,11 @@ df %>%
     unique() %>% 
     mutate(percent = n/n_region*100) %>% 
     select(sasa_group_category, bin, percent) %>% 
-    pivot_wider(names_from='bin',values_from='percent')  %>% 
+    pivot_wider(names_from='bin',values_from='percent') %>% 
     select(sasa_group_category, `WT-like`, `STOP-like`, toxic)
 
 # number of each bin for GTPase regions
 df %>% 
-    filter(position!=220) %>% 
     filter(aa_to!='*') %>% 
     filter(aa_to!=aa_from) %>% 
     group_by(sasa_group_category, bin) %>% 

@@ -3,7 +3,8 @@
 source('scripts/config_workspace.R') 
 
 # read in counts table
-df_raw <- read_csv('data/raw_counts.csv', col_types = cols())
+df_raw <- read_csv('data/raw_counts.csv', col_types = cols()) %>% 
+    filter(position!=220)
 
 # Set a threshold for low read counts at 2% of the average variant's reads.
 # Alleles below this are considered not well represented in the library, and
@@ -87,3 +88,4 @@ df_binned <-
 df_binned %>% 
     select(mutant, aa_from, position, aa_to, score, bin, low_reads_flag) %>% 
     write_csv('/Users/cjmathy/gdrive/gsp1_dms/data/Gsp1_fitness_scores.csv')
+

@@ -19,6 +19,8 @@ wget https://pdb-redo.eu/db/4ol0/4ol0_final.pdb -P ../data/pdbs_raw/
 wget https://files.rcsb.org/download/1a2k.pdb -P ../data/pdbs_raw/
 wget https://files.rcsb.org/download/1ibr.pdb -P ../data/pdbs_raw/
 wget https://files.rcsb.org/download/1qbk.pdb -P ../data/pdbs_raw/
+wget https://files.rcsb.org/download/3k8y.pdb -P ../data/pdbs_raw/
+wget https://files.rcsb.org/download/2rge.pdb -P ../data/pdbs_raw/
 
 rename 's/_final//' ../data/pdbs_raw/*_final*
 

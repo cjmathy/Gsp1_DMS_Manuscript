@@ -14,9 +14,11 @@ df <-
 
 df %>% pull(bin) %>% unique
 
+
+
+
 # get percent of toxics in dataset
-
-
+# this includes STOPs
 nrow(filter(df, !low_reads_flag, aa_from!=aa_to, bin=='toxic'))/nrow(filter(df, !low_reads_flag, aa_from!=aa_to))
 
 
@@ -153,16 +155,17 @@ col_fn <- colorRamp2(c(-6.8, -2.15, -1.2, -0.42, 0, 0.42, 1.2), colors)
 # make heatmaps 
 hm1 <- draw_fitness_heatmap(mat=mat[1:21,1:110], name='Fitness', col=col_fn, label_WT=T,
                             sequence=gsp1_seq[1:110], low_read=mat_low_read[1:21,1:110])
-hm2 <- draw_fitness_heatmap(mat=mat[1:21,111:220], name='Fitness', col=col_fn, label_WT=T,
-                            sequence=gsp1_seq[111:220], low_read=mat_low_read[1:21,111:220])
+hm2 <- draw_fitness_heatmap(mat=mat[1:21,111:219], name='Fitness', col=col_fn, label_WT=T,
+                            sequence=gsp1_seq[111:219], low_read=mat_low_read[1:21,111:219])
 
-pdf('figures/Fig1/Fig1C_top.pdf', height = 1.85, width = 7.3)
+pdf('figures/Fig1/Fig1C_top.pdf', height = 1.8, width = 7)
 draw(hm1)
 dev.off()
 
-pdf('figures/Fig1/Fig1C_bot.pdf', height = 1.85, width = 7.3)
+pdf('figures/Fig1/Fig1C_bot.pdf', height = 1.8, width = 7-0.056)
 draw(hm2)
 dev.off()
+
 
 # annotation of secondary structure done in Illustrator, using the annotations from
 # crystal structures at:

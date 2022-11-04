@@ -5,11 +5,11 @@ source('scripts/config_workspace.R')
 df <-
     read_csv('data/Gsp1_fitness_scores.csv', col_types=cols()) %>% 
     mutate(score = as.double(score)) %>% 
-    filter(!low_reads_flag) %>% 
-    mutate(bin=case_when(aa_to=='*'  & !is.na(score) ~ 'STOP',
-                         aa_to==aa_from & !is.na(score) ~ 'WT',
+    filter(!low_reads_flag) %>%  
+    mutate(bin=case_when(aa_to==aa_from & !is.na(score) ~ 'WT',
+                         aa_to=='*'  & !is.na(score) ~ 'STOP',
                          T ~ bin)) %>% 
-    mutate(table_cat = bin) %>% 
+    mutate(table_cat = bin) %>%
     mutate(table_cat = case_when(
         table_cat != 'STOP' ~ table_cat,
         (table_cat == 'STOP') & (position < 175) ~ 'STOP1',
@@ -27,8 +27,6 @@ df <-
            sd = sd(score, na.rm=T)) %>% 
     ungroup()
 
-df
-
 
 # get number of low-reads
 read_csv('data/Gsp1_fitness_scores.csv', col_types=cols()) %>%
@@ -45,15 +43,6 @@ df_means <-
 
 df_means
 
-
-# use these values to count the fraction of deleterious mutations that are worse than the median
-nrow(filter(df, bin %in% c('toxic','STOP-like', 'intermediate')))
-df %>% 
-    filter(bin %in% c('toxic','STOP-like', 'intermediate')) %>% 
-    filter(score < filter(df_medians, bin=='STOP')$median_score) %>% 
-    nrow
-
-1458/1901
 
 bw <- 0.1  # bin width
 lt <- 0.05 # line thickness

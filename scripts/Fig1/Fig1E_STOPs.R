@@ -19,10 +19,8 @@ filter(df, position < 175, aa_to=='*') %>% summarise(mean(score)) # -2.06
 
 # max/min of STOPs at or after position 175 (inclusive)
 filter(df, position >= 175, aa_to=='*') %>% summarise(min(score))  # -10.5
-filter(df, position >= 175, aa_to=='*') %>% summarise(max(score))  # 0.451
-filter(df, position >= 175, aa_to=='*') %>% summarise(mean(score)) # -6.50
-
-df %>% filter(bin %in% 'toxic')
+filter(df, position >= 175, aa_to=='*') %>% summarise(max(score))  # 0.452
+filter(df, position >= 175, aa_to=='*') %>% summarise(mean(score)) # -6.66
 
 
 df

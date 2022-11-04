@@ -84,5 +84,5 @@ df %>%
     theme_custom +
     theme(legend.position='none')
     
-ggsave('figures/FigS4/FigS4A_ddG_scatter_burial.pdf', width=6.5, height = 2)
+ggsave('figures/FigS4/FigS4A_ddG_scatter_burial.pdf', width=6.2, height = 2)
 

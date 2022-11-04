@@ -29,7 +29,7 @@ c = venn2(
      'HRas GOF\n positions ({})'.format(len(gof_2plus)))
 )
 
-c.get_patch_by_id('10').set_color('#00CD66')    # springgreen3
+c.get_patch_by_id('10').set_color('#cd2028')    # red
 c.get_patch_by_id('10').set_edgecolor('black')
 c.get_patch_by_id('10').set_alpha(0.6)
 c.get_patch_by_id('01').set_color('#FFFFFF')    # white
@@ -57,7 +57,7 @@ c = venn2(
      'HRas sector\n positions (SCA) ({})'.format(len(sca)))
 )
 
-c.get_patch_by_id('10').set_color('#00CD66')    # springgreen3
+c.get_patch_by_id('10').set_color('#cd2028')    # red
 c.get_patch_by_id('10').set_edgecolor('black')
 c.get_patch_by_id('10').set_alpha(0.6)
 c.get_patch_by_id('01').set_color('#FFFFFF')    # white
